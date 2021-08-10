@@ -1,0 +1,67 @@
+<style>
+    .del:checked+span{
+        color: red;
+    }
+    li{
+        list-style: none;
+    }
+
+</style>
+
+<ul>
+<% user.forEach(function(v){%>
+<li><%=v%></li>
+<%})%>
+</ul>
+
+<h3>addTask</h3>
+<form method="post" >
+
+<label>add Task</label>
+<input type="text" name='task' placeholder="task">
+<input type='submit' value="submit">
+
+
+
+</form method='post' action='task/delete'>
+
+Hellow <%=title%>
+
+<form method="POST" action="tasks/delete">
+<ul>
+<% tasks.forEach(function(task){%>
+    <li>
+        <label>
+            <input type="checkbox", name='tasks' class='del' value ="<%=task%>">
+            <span><%=task%></span>
+        </label>
+    </li>
+
+<%})%>
+</ul>
+<input type="submit" value="submit">
+</form>
+
+
+<h3>edit next call</h3>
+<form method="post" action="/call/add">
+
+<label>name</label><br>
+<input type="text" name="name" placeholder="name">
+<br><br>
+
+<label>age</label>
+<br>
+<input type="text" name="age" placeholder="age">
+<br><br>
+<label>adress</label>
+<br>
+<input type="text" name="adress" placeholder="adress">
+<br><br>
+<label>tel</label>
+<br>
+<input type="text" name="tel" placeholder="tel">
+<br><br>
+<input type="submit" value="submit">
+
+</form>
